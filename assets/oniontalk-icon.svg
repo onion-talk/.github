@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient: Deep Corporate Navy/Slate -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2B4058" />
+      <stop offset="50%" stop-color="#1B2B3E" />
+      <stop offset="100%" stop-color="#101C2B" />
+    </linearGradient>
+
+    <!-- Chat Bubble Satin White Gradient -->
+    <linearGradient id="bubbleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#EFF3F7" />
+    </linearGradient>
+
+    <!-- Padlock Shackle Metallic Gradient -->
+    <linearGradient id="shackleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#41556F" />
+      <stop offset="50%" stop-color="#243447" />
+      <stop offset="100%" stop-color="#182433" />
+    </linearGradient>
+
+    <!-- Padlock Body Gradient -->
+    <linearGradient id="lockBodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2F445E" />
+      <stop offset="50%" stop-color="#1F2F43" />
+      <stop offset="100%" stop-color="#142131" />
+    </linearGradient>
+
+    <!-- Telegram Cyan Keyhole Gradient -->
+    <linearGradient id="keyholeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#0284C7" />
+    </linearGradient>
+
+    <!-- Subtle Bubble Drop Shadow -->
+    <filter id="bubbleShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#04080D" flood-opacity="0.32" />
+    </filter>
+
+    <!-- Padlock Ambient Shadow -->
+    <filter id="lockShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- 1. Background Squircle (Corporate Navy Slate) -->
+  <rect x="0" y="0" width="512" height="512" rx="114" fill="url(#bgGrad)" />
+
+  <!-- 2. Speech Chat Bubble with Tail -->
+  <g filter="url(#bubbleShadow)">
+    <path d="
+      M 264 92
+      C 346 92, 412 158, 412 240
+      C 412 322, 346 388, 264 388
+      C 238 388, 214 381, 192 370
+      C 162 388, 126 397, 116 398
+      C 112 398, 110 394, 112 390
+      C 122 368, 134 344, 132 328
+      C 122 302, 116 272, 116 240
+      C 116 158, 182 92, 264 92
+      Z" 
+      fill="url(#bubbleGrad)" />
+  </g>
+
+  <!-- 3. Padlock Group -->
+  <g filter="url(#lockShadow)">
+    <!-- Padlock Shackle (Arch) -->
+    <path d="
+      M 226 220
+      L 226 178
+      C 226 154, 239 136, 264 136
+      C 289 136, 302 154, 302 178
+      L 302 220"
+      fill="none"
+      stroke="url(#shackleGrad)"
+      stroke-width="17"
+      stroke-linecap="round"
+      stroke-linejoin="round" />
+
+    <!-- Padlock Shackle Inner Hole Cutout Illusion / Depth Rim -->
+    <path d="
+      M 234 212
+      L 234 178
+      C 234 159, 244 144, 264 144
+      C 284 144, 294 159, 294 178
+      L 294 212"
+      fill="none"
+      stroke="#556B88"
+      stroke-width="2"
+      opacity="0.4" />
+
+    <!-- Padlock Solid Body -->
+    <path d="
+      M 212 216
+      C 212 208, 218 202, 226 202
+      L 302 202
+      C 310 202, 316 208, 316 216
+      L 316 264
+      C 316 294, 292 316, 264 316
+      C 236 316, 212 294, 212 264
+      Z"
+      fill="url(#lockBodyGrad)" />
+
+    <!-- Padlock Top Highlight Edge -->
+    <line x1="226" y1="203" x2="302" y2="203" stroke="#4C6482" stroke-width="1.5" stroke-linecap="round" opacity="0.6" />
+
+    <!-- Telegram Cyan Keyhole -->
+    <!-- Circular Upper Keyhole -->
+    <circle cx="264" cy="245" r="9.5" fill="url(#keyholeGrad)" />
+    <!-- Tapered Lower Keyhole -->
+    <path d="
+      M 259.5 245
+      L 256.5 272
+      C 256.5 275.5, 259.5 278, 264 278
+      C 268.5 278, 271.5 275.5, 271.5 272
+      L 268.5 245
+      Z"
+      fill="url(#keyholeGrad)" />
+  </g>
+</svg>
