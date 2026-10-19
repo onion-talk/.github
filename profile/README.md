@@ -42,10 +42,10 @@ Most encrypted messengers protect message content while still exposing your soci
 
 OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 
-1. **Zero Identity Registration**: Your identity is an Ed25519 / X25519 cryptographic keypair generated locally on your device. No phone number, email, or central account server exists.
+1. **Zero Identity Registration (256-bit Public Key ID)**: Your identity (`@<64-hex-ed25519-pubkey>:<domain>.onion`) embeds a full 256-bit **Ed25519** public key generated locally on your device and birationally mapped to **X25519**. No phone number, email, or central account server exists.
 2. **100% Tor v3 Hidden Service Transport**: Every client and relay communicates exclusively through 56-character `.onion` v3 addresses over SOCKS5h (`127.0.0.1:9050`). Neither the sender, the recipient, nor the relay node ever learns another participant's IP address or physical location.
-3. **Zero-Knowledge Federated Mesh**: Messages are sealed on the sender's device using **X25519 ECDH + HKDF-SHA256 + ChaCha20-Poly1305** and wrapped in an **AES-256-GCM** wire envelope before touching the network. Relays act strictly as blind store-and-forward mailboxes and cannot decrypt payloads or forge delivery receipts (`SHA-256(ack_token) == ack_hash`).
-4. **Censorship Immunity by Design**: Anyone can spin up a relay node behind residential NAT or CGNAT with a single Docker command. Through autonomous Peer Exchange (`Auto-Gossip PEX`) and epidemic gossip fanout, every new node strengthens the mesh without requiring port forwarding, static IPs, or TLS certificates.
+3. **Zero-Knowledge RAM-Only Federated Mesh**: Every message is sealed with a fresh ephemeral **X25519** keypair (`Ephemeral-Static + Static-Static ECDH` + `HKDF-SHA256` + `ChaCha20-Poly1305 AEAD`) and signed with the sender's **Ed25519** private key (`__ENC_X25519_CHACHA20_V2__`). Relays hold messages strictly in volatile RAM (`ram-volatile-ephemeral-ttl24h`), enforce **Ed25519** signature authentication on `/inbox` and `/ack`, and require a CSPRNG 256-bit preimage proof (`SHA-256(ack_token) == ack_lock`) before purging envelopes.
+4. **Censorship Immunity by Design**: Anyone can spin up a relay node behind residential NAT or CGNAT with a single Docker command. Through Ed25519-authenticated Peer Exchange (`Auto-Gossip PEX`) and epidemic gossip fanout, every new node strengthens the mesh without requiring port forwarding, static IPs, or TLS certificates.
 
 ---
 
@@ -90,7 +90,7 @@ This organization follows a modular structure for the OnionTalk protocol, relay 
 | Repository | Role | Stack | Status |
 | :--- | :--- | :--- | :--- |
 | [**`oniontalk-demo`**](https://github.com/onion-talk/oniontalk-demo) | Official Android Demo APK & Step-by-Step Visual Walkthrough (*Pablo & Bruna* Dual-Emulator Demo) | Android APK, SQLCipher, Tor v3, Documentation | ![Active](https://img.shields.io/badge/demo-available-00C853?style=flat-square) |
-| [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Auto-Gossip PEX, SQLite WAL Store-and-Forward, and Cryptographic ACK Preimage Lock | Python 3.11, Flask, Gunicorn, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
+| [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Ed25519-Authenticated Gossip PEX, RAM-Only Volatile Queues, and Cryptographic ACK Preimage Lock | Python 3.12, Flask, Gunicorn, Cryptography, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
 | [**`oniontalk-protocol`**](https://github.com/onion-talk/oniontalk-protocol) | OnionTalk Wire Protocol Specification, 4-Layer Cryptographic Stack, Epidemic Gossip Routing, and Anti-Censorship Manifesto | Markdown, Mermaid, Cryptographic Specs | ![Active](https://img.shields.io/badge/status-stable-1F6FEB?style=flat-square) |
 | [**`.github`**](https://github.com/onion-talk/.github) | Organization Profile, Community Health Files, Security Disclosure Policy, and Funding Configuration | GitHub Actions, YAML, Markdown | ![Active](https://img.shields.io/badge/status-active-00C853?style=flat-square) |
 
@@ -100,10 +100,10 @@ This organization follows a modular structure for the OnionTalk protocol, relay 
 
 | Layer | Technology | Security Guarantee |
 | :--- | :--- | :--- |
-| **L1: Anonymity & Routing** | Tor v3 Hidden Services (`SOCKS5h`, Ed25519 56-char `.onion`) | Conceals IP addresses of senders, recipients, and relays. Works behind CGNAT without open router ports. |
-| **L2: Service Discovery** | Bootstrap Seeds + Autonomous Peer Exchange (`Auto-Gossip PEX`) | Relays discover and verify peers every 30 seconds via `/api/v1/peers/announce` and `/api/v1/peers/list`. |
-| **L3: Epidemic Gossip & Storage** | Multi-Relay Fanout (`3x`) + SQLite WAL + Cryptographic ACK Lock | Envelopes replicate across the mesh with a 7-day TTL and are purged only when the recipient proves knowledge of `SHA-256(ack_token) == ack_hash`. |
-| **L4: End-to-End Encryption** | `X25519` + `HKDF-SHA256` + `ChaCha20-Poly1305` + `AES-256-GCM` | Double-layer authenticated encryption on the client device. Relays hold zero decryption keys. |
+| **L1: Anonymity & Routing** | Tor v3 Hidden Services (`SOCKS5h`, Ed25519 56-char `.onion`, `127.0.0.1` local bind) | Conceals IP addresses of senders, recipients, and relays. Works behind CGNAT without open router ports. |
+| **L2: Service Discovery** | Bootstrap Seeds + Ed25519-Authenticated Peer Exchange (`Auto-Gossip PEX`) | Relays sign peer announcements with Ed25519 and verify `node_pubkey` over Tor (`/health`) before admitting peers. |
+| **L3: Epidemic Gossip & Storage** | RAM-Only Volatile Store-and-Forward (`24h TTL`) + Ed25519 Inbox Auth + ACK Lock | Envelopes reside strictly in RAM, require Ed25519 challenge signatures on `/inbox`, and purge upon verifying `SHA-256(ack_token) == ack_lock`. |
+| **L4: End-to-End Encryption** | `X25519` (Ephemeral+Static ECDH) + `HKDF-SHA256` + `ChaCha20-Poly1305` + `Ed25519` Signature | Per-message forward secrecy and sender authenticity on the client device; local storage protected by `SQLCipher AES-256-CBC` + `Argon2id`. |
 
 ---
 
