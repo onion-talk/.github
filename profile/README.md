@@ -4,6 +4,9 @@
   <p><strong>Zero-Knowledge, End-to-End Encrypted P2P Mesh Messenger over Tor v3 Hidden Services</strong></p>
 
   <p>
+    <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/apk/OnionTalk-Demo.apk">
+      <img src="https://img.shields.io/badge/Download_Demo_APK-Android_8.0%2B-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Download Android Demo APK" />
+    </a>
     <a href="https://github.com/sponsors/eriktonon">
       <img src="https://img.shields.io/badge/Sponsor-OnionTalk-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
     </a>
@@ -43,12 +46,31 @@ OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 
 ---
 
+## 📱 App Preview & Live Emulator Walkthrough ("Pablo & Bruna")
+
+Below is a real-time demonstration captured from two independent Android emulators (**Pablo** and **Bruna**) conversing in English over the OnionTalk Tor v3 mesh—with zero SIM card, zero phone number, and full anti-forensic local storage (`SQLCipher AES-256-CBC` + `Argon2id`).
+
+👉 **[Explore the Full Screen-by-Screen Technical Walkthrough & Download the Demo APK (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
+
+| **1. Zero-PII Identity Creation (`Pablo`)** | **2. Pablo's View (Tor v3 E2EE Chat)** | **3. Bruna's View (Mirrored P2P Delivery)** |
+| :---: | :---: | :---: |
+| <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/02-create-identity-en.png" width="260" alt="Create Anonymous Account" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/04-chat-pablo-bruna-en.png" width="260" alt="Pablo Chat with Bruna" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/05-chat-bruna-pablo-en.png" width="260" alt="Bruna Chat with Pablo" /> |
+| *Local Ed25519/X25519 key generation & Argon2id vault without phone numbers or emails.* | *Pablo chatting with Bruna in Lisbon over `.onion` relays with zero roaming or IP tracking.* | *Bruna receiving and replying to Pablo's encrypted payloads in real time.* |
+
+| **4. Synchronized Bilateral Burn (`🔥`)** | **5. Federated `.onion` Mesh & Tor SOCKS5h** | **6. SQLCipher AES-256 & Anti-Forensics** |
+| :---: | :---: | :---: |
+| <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/06b-after-synchronized-burn-en.png" width="260" alt="Synchronized Burn Scrambled Chat" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/08-tor-mesh-settings-en.png" width="260" alt="Tor Mesh Settings" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/09-security-sqlcipher-en.png" width="260" alt="SQLCipher Security Audit" /> |
+| *In-place B-Tree cell overwrite with cryptographic noise (`🔥`) on both devices simultaneously.* | *9 active `.onion` v3 relays discovered via `Auto-Gossip PEX` over `127.0.0.1:9050`.* | *`FLAG_SECURE`, 5-strike duress wipe, zero-FCM local Tor push, and manual `VACUUM`.* |
+
+---
+
 ## 📦 Organization Repositories
 
-This organization follows a modular open-source structure for the OnionTalk protocol, relay infrastructure, and client ecosystem:
+This organization follows a modular structure for the OnionTalk protocol, relay infrastructure, and application demo:
 
 | Repository | Role | Stack | Status |
 | :--- | :--- | :--- | :--- |
+| [**`oniontalk-demo`**](https://github.com/onion-talk/oniontalk-demo) | Official Android Demo APK & Step-by-Step Visual Walkthrough (*Pablo & Bruna* Dual-Emulator Demo) | Android APK, SQLCipher, Tor v3, Documentation | ![Active](https://img.shields.io/badge/demo-available-00C853?style=flat-square) |
 | [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Auto-Gossip PEX, SQLite WAL Store-and-Forward, and Cryptographic ACK Preimage Lock | Python 3.11, Flask, Gunicorn, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
 | [**`oniontalk-protocol`**](https://github.com/onion-talk/oniontalk-protocol) | OnionTalk Wire Protocol Specification, 4-Layer Cryptographic Stack, Epidemic Gossip Routing, and Anti-Censorship Manifesto | Markdown, Mermaid, Cryptographic Specs | ![Active](https://img.shields.io/badge/status-stable-1F6FEB?style=flat-square) |
 | [**`.github`**](https://github.com/onion-talk/.github) | Organization Profile, Community Health Files, Security Disclosure Policy, and Funding Configuration | GitHub Actions, YAML, Markdown | ![Active](https://img.shields.io/badge/status-active-00C853?style=flat-square) |
@@ -98,12 +120,6 @@ OnionTalk is an independent open-source project with zero venture capital, zero 
 
 | Network | Wallet Address |
 | :--- | :--- |
-| **🟠 Bitcoin (BTC)** | `bc1q0hr95ay33rtazfepg64yddf52q3yqh7ud83cza` |
-| **🔷 Ethereum (ETH / ERC-20)** | `0xE69FCE4Fa35CF3bd98F496337b1eA223270b2c92` |
-| **🟣 Solana (SOL)** | `3E8L1Hdqe7Xk6GCrzHbtY5sReAfLFc9CdwgZxP7qaoHq` |
-
----
-
-<div align="center">
-  <sub>Built for privacy, resilience, and mathematical freedom.</sub>
-</div>
+| **Bitcoin (`BTC`)** | `bc1q0hr95ay33rtazfepg64yddf52q3yqh7ud83cza` |
+| **Ethereum (`ETH`)** | `0xE69FCE4Fa35CF3bd98F496337b1eA223270b2c92` |
+| **Solana (`SOL`)** | `3E8L1Hdqe7Xk6GCrzHbtY5sReAfLFc9CdwgZxP7qaoHq` |
