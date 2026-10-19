@@ -4,6 +4,9 @@
   <p><strong>Zero-Knowledge, End-to-End Encrypted P2P Mesh Messenger over Tor v3 Hidden Services</strong></p>
 
   <p>
+    <a href="https://github.com/onion-talk/oniontalk-demo">
+      <img src="https://img.shields.io/badge/Google_Play-Coming_Soon-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="Coming Soon to Google Play Store" />
+    </a>
     <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/apk/OnionTalk-Demo.apk">
       <img src="https://img.shields.io/badge/Download_Demo_APK-Android_8.0%2B-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Download Android Demo APK" />
     </a>
@@ -47,6 +50,8 @@ OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 ---
 
 ## 📱 App Preview & Live Emulator Walkthrough ("Pablo & Bruna")
+
+> 🚀 **Coming Soon to Google Play Store**: The official OnionTalk Android application is in final release preparation and will be published soon on **Google Play**. While the store rollout is underway—and before the Android client source code is opened in a future milestone—you can explore the full live emulator walkthrough below or download and test the signed [**Demo APK (`OnionTalk-Demo.apk`)**](https://github.com/onion-talk/oniontalk-demo/raw/main/apk/OnionTalk-Demo.apk) directly.
 
 Below is a real-time demonstration captured from two independent Android emulators (**Pablo** and **Bruna**) conversing in English over the OnionTalk Tor v3 mesh—with zero SIM card, zero phone number, and full anti-forensic local storage (`SQLCipher AES-256-CBC` + `Argon2id`).
 
