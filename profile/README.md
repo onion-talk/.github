@@ -53,6 +53,8 @@ OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 Below is a real-time demonstration captured from two independent Android emulators (**Pablo** and **Bruna**) conversing in English over the OnionTalk Tor v3 mesh—with zero SIM card, zero phone number, and full anti-forensic local storage (`SQLCipher AES-256-CBC` + `Argon2id`).
 
 👉 **[Download on Google Play (`org.oniontalk.messenger`) →](https://play.google.com/store/apps/details?id=org.oniontalk.messenger)**  
+👉 **[Download Signed APK `v1.2.0` (`OnionTalk-v1.2.0.apk` — Always-Connected Background Tor) →](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.2.0-demo/OnionTalk-v1.2.0.apk)**  
+👉 **[Official Website & Privacy Policy (GitHub Pages) →](https://onion-talk.github.io/oniontalk-demo/)    
 👉 **[Explore the Full Screen-by-Screen Technical Walkthrough (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
 
 <div align="center">
