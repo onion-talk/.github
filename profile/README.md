@@ -4,11 +4,8 @@
   <p><strong>Zero-Knowledge, End-to-End Encrypted P2P Mesh Messenger over Tor v3 Hidden Services</strong></p>
 
   <p>
-    <a href="https://github.com/onion-talk/oniontalk-demo">
-      <img src="https://img.shields.io/badge/Google_Play-Coming_Soon-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="Coming Soon to Google Play Store" />
-    </a>
-    <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/apk/OnionTalk-Demo.apk">
-      <img src="https://img.shields.io/badge/Download_Demo_APK-Android_8.0%2B-00C853?style=for-the-badge&logo=android&logoColor=white" alt="Download Android Demo APK" />
+    <a href="https://play.google.com/store/apps/details?id=org.oniontalk.messenger">
+      <img src="https://img.shields.io/badge/Google_Play-OnionTalk_–_Apps_no_Google_Play-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="OnionTalk – Apps no Google Play" />
     </a>
     <a href="https://github.com/sponsors/eriktonon">
       <img src="https://img.shields.io/badge/Sponsor-OnionTalk-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
@@ -49,13 +46,14 @@ OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 
 ---
 
-## 📱 App Preview & Live Emulator Walkthrough ("Pablo & Bruna")
+## 📱 Official Release on Google Play & Live Walkthrough ("Pablo & Bruna")
 
-> 🚀 **Coming Soon to Google Play Store**: The official OnionTalk Android application is in final release preparation and will be published soon on **Google Play**. While the store rollout is underway—and before the Android client source code is opened in a future milestone—you can explore the full live emulator walkthrough below or download and test the signed [**Demo APK (`OnionTalk-Demo.apk`)**](https://github.com/onion-talk/oniontalk-demo/raw/main/apk/OnionTalk-Demo.apk) directly.
+> 🚀 **Available Now on Google Play Store**: Download the official OnionTalk Android application directly on Google Play: [**OnionTalk – Apps no Google Play**](https://play.google.com/store/apps/details?id=org.oniontalk.messenger).
 
 Below is a real-time demonstration captured from two independent Android emulators (**Pablo** and **Bruna**) conversing in English over the OnionTalk Tor v3 mesh—with zero SIM card, zero phone number, and full anti-forensic local storage (`SQLCipher AES-256-CBC` + `Argon2id`).
 
-👉 **[Explore the Full Screen-by-Screen Technical Walkthrough & Download the Demo APK (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
+👉 **[Download on Google Play (`org.oniontalk.messenger`) →](https://play.google.com/store/apps/details?id=org.oniontalk.messenger)**  
+👉 **[Explore the Full Screen-by-Screen Technical Walkthrough (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
 
 <div align="center">
   <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-Freedom-EN.mp4">
@@ -89,7 +87,7 @@ This organization follows a modular structure for the OnionTalk protocol, relay 
 
 | Repository | Role | Stack | Status |
 | :--- | :--- | :--- | :--- |
-| [**`oniontalk-demo`**](https://github.com/onion-talk/oniontalk-demo) | Official Android Demo APK & Step-by-Step Visual Walkthrough (*Pablo & Bruna* Dual-Emulator Demo) | Android APK, SQLCipher, Tor v3, Documentation | ![Active](https://img.shields.io/badge/demo-available-00C853?style=flat-square) |
+| [**`oniontalk-demo`**](https://github.com/onion-talk/oniontalk-demo) | Official Google Play App Link & Step-by-Step Visual Walkthrough (*Pablo & Bruna* Dual-Emulator Demo) | Android, SQLCipher, Tor v3, Documentation | ![Active](https://img.shields.io/badge/Google_Play-available-00C853?style=flat-square) |
 | [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Ed25519-Authenticated Gossip PEX, RAM-Only Volatile Queues, and Cryptographic ACK Preimage Lock | Python 3.12, Flask, Gunicorn, Cryptography, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
 | [**`oniontalk-protocol`**](https://github.com/onion-talk/oniontalk-protocol) | OnionTalk Wire Protocol Specification, 4-Layer Cryptographic Stack, Epidemic Gossip Routing, and Anti-Censorship Manifesto | Markdown, Mermaid, Cryptographic Specs | ![Active](https://img.shields.io/badge/status-stable-1F6FEB?style=flat-square) |
 | [**`.github`**](https://github.com/onion-talk/.github) | Organization Profile, Community Health Files, Security Disclosure Policy, and Funding Configuration | GitHub Actions, YAML, Markdown | ![Active](https://img.shields.io/badge/status-active-00C853?style=flat-square) |
