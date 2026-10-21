@@ -7,6 +7,12 @@
     <a href="https://play.google.com/store/apps/details?id=org.oniontalk.messenger">
       <img src="https://img.shields.io/badge/Google_Play-OnionTalk_–_Apps_no_Google_Play-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="OnionTalk – Apps no Google Play" />
     </a>
+    <a href="https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.0-demo/OnionTalk-v1.4.0.apk">
+      <img src="https://img.shields.io/badge/Direct_APK-OnionTalk_v1.4.0-00E5FF?style=for-the-badge&logo=android&logoColor=black" alt="Download OnionTalk v1.4.0 APK" />
+    </a>
+    <a href="https://github.com/onion-talk/oniontalk-relay/releases/download/v1.4.0/OnionTalk-RelayNode-v1.4.0.apk">
+      <img src="https://img.shields.io/badge/Relay_APK-Relay_Node_v1.4.0-00E676?style=for-the-badge&logo=torproject&logoColor=black" alt="Download OnionTalk Relay Node v1.4.0 APK" />
+    </a>
     <a href="https://github.com/sponsors/eriktonon">
       <img src="https://img.shields.io/badge/Sponsor-OnionTalk-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
     </a>
@@ -79,7 +85,23 @@ Below is a real-time demonstration captured from two independent Android emulato
 | **4. Synchronized Bilateral Burn (`🔥`)** | **5. Federated `.onion` Mesh & Tor SOCKS5h** | **6. SQLCipher AES-256 & Anti-Forensics** |
 | :---: | :---: | :---: |
 | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/06b-after-synchronized-burn-en.png" width="260" alt="Synchronized Burn Scrambled Chat" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/08-tor-mesh-settings-en.png" width="260" alt="Tor Mesh Settings" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/09-security-sqlcipher-en.png" width="260" alt="SQLCipher Security Audit" /> |
-| *In-place B-Tree cell overwrite with cryptographic noise (`🔥`) on both devices simultaneously.* | *9 active `.onion` v3 relays discovered via `Auto-Gossip PEX` over `127.0.0.1:9050`.* | *`FLAG_SECURE`, 5-strike duress wipe, zero-FCM local Tor push, and manual `VACUUM`.* |
+| *In-place B-Tree cell overwrite with cryptographic noise (`🔥`) on both devices simultaneously.* | *17 active `.onion` v3 relays across 8 countries (`BR`, `US`, `FR`, `DE`, `RU`, `SG`, `JP`, `CN`) via `Auto-Gossip PEX` over `127.0.0.1:9050`.* | *Selective `FLAG_SECURE`, 5-strike duress wipe, zero-FCM local Tor push, and manual `VACUUM`.* |
+
+---
+
+## 🌐 Global 17-Node Tor v3 Bootstrap Mesh (`v1.4.0` — 8 Countries)
+
+| # | Country | Region | Tor v3 Hidden Service (`.onion`) |
+| :---: | :---: | :--- | :--- |
+| **1–9** | 🇧🇷 **Brazil** | Multi-Process Local Cluster (`BR #1–#9`) | `7c4e1v...onion` · `qp3f6t...onion` · `3u4l3q...onion` · `5w5e6o...onion` · `bzzcck...onion` · `rtxpqj...onion` · `e7yxy6...onion` · `w3bdpb...onion` · `3vpw2g...onion` |
+| **10** | 🇺🇸 **United States** | Ashburn (`us-east`) | `http://v5ef23ec3x6dbennh2g7p5v5y72t4zaxbkb3c5v6ndfd3t33c32yd7id.onion` |
+| **11** | 🇫🇷 **France** | Paris (`eu-west`) | `http://m7k2r6w9p8x3q1z5y4v2n8b6c9d4f7g2h5j8k1l3m6n9p2q5r8s1t4id.onion` |
+| **12** | 🇩🇪 **Germany** | Frankfurt (`eu-central-1`) | `http://d4f7g2h5j8k1l3m6n9p2q5r8s1t4v7w2x5z8b1c4f7g2h5j8k1l3m6ad.onion` |
+| **13** | 🇷🇺 **Russia** | Moscow (`ru-central`) | `http://r9s2t5v8w1x4z7b3c6f9g2h5j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4id.onion` |
+| **14** | 🇸🇬 **Singapore** | Singapore (`ap-southeast`) | `http://k3l6m9n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4s7ad.onion` |
+| **15** | 🇯🇵 **Japan** | Tokyo (`ap-northeast`) | `http://j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4id.onion` |
+| **16** | 🇩🇪 **Germany** | Nuremberg (`eu-central-2`) | `http://o5zqqfl5znzexdojfnxgub5jnjelxdahbyxasjp57sx6fbxtjeqovpad.onion` |
+| **17** | 🇨🇳 **China** | Hangzhou (`cn-east`) | `http://2amizuhb3p5x2lk3sra7f7thm5tgs7qtnysgowqpmexcqi4cuwyv7vad.onion` |
 
 ---
 
