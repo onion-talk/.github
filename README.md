@@ -34,10 +34,10 @@
 ## 🚀 What's New in `v1.4.1` (`versionCode = 18` / Internal `vc17`) — Password-Locked Messages & Chats, Unified Long-Press Menu, Profile Photo Privacy, 15s Auto-Lock & Official Video Suite
 
 - **📦 Direct Signed APK Downloads (`v1.4.1` — Latest Fixed Build 18)**:
-  - **Main Messenger APK (`org.oniontalk.messenger` `v1.4.1` Build 18)**: [**Download `OnionTalk-v1.4.1.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.1-demo/OnionTalk-v1.4.1.apk) (`SHA-256: 045fb6632164b065a82a271d3e7a2a69ecba4e68acc26752906c3091db41f689`)
+  - **Main Messenger APK (`org.oniontalk.messenger` `v1.4.1` Build 18)**: [**Download `OnionTalk-v1.4.1.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.1-demo/OnionTalk-v1.4.1.apk) (`SHA-256: 68f3d5785919acaf0820c238f93f5db0cb02df5986db457ec783d573dbc652a8`)
   - **Release Build 18 APK (`versionCode = 18`)**: [**Download `OnionTalk-v1.4.1-b18-release.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.1-demo/OnionTalk-v1.4.1-b18-release.apk)
   - **Internal Test Track Build 17 APK (`versionCode = 17`)**: [**Download `OnionTalk-v1.4.1-b17-internal.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.1-demo/OnionTalk-v1.4.1-b17-internal.apk) (`SHA-256: b110ff9db1b75bf4ec6229284a6dd2f47040175003974f8a50bfe9ef2f100c5c`)
-  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.4.1` Build 3)**: [**Download `OnionTalk-RelayNode-v1.4.1.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.1-demo/OnionTalk-RelayNode-v1.4.1.apk) (`SHA-256: c8067c1208d487af08aa6afe470089e59b9f6351b499bcc265581709be7a0dc2`)
+  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.4.1` Build 3)**: [**Download `OnionTalk-RelayNode-v1.0.1.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.1-demo/OnionTalk-RelayNode-v1.0.1.apk) (`SHA-256: 08b926aaa7e52c14373a8c1038384835e34f82ef6dc0c6c4782e3a795aa95a96`)
 - **🎬 New Official `v1.4.1` Promotional & Feature Walkthrough Videos**:
   - [**▶ Watch Official Promo v1.4.1 (Português 1080p)**](https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-v1.4.1-Promo-Oficial-PT.mp4)
   - [**▶ Watch Official Promo v1.4.1 (English 1080p)**](https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-v1.4.1-Promo-Official-EN.mp4)
