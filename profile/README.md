@@ -13,6 +13,9 @@
     <a href="https://github.com/onion-talk/oniontalk-relay/releases/download/v1.4.2/OnionTalk-RelayNode-v1.4.2.apk">
       <img src="https://img.shields.io/badge/Relay_APK-Relay_Node_v1.4.3_(Build_7_Zero--Leak)-00E676?style=for-the-badge&logo=torproject&logoColor=black" alt="Download OnionTalk Relay Node v1.0.1 Zero-Leak APK" />
     </a>
+    <a href="https://hub.docker.com/r/eriktonon/oniontalk-web">
+      <img src="https://img.shields.io/badge/Docker_Web_Client-eriktonon%2Foniontalk--web:latest-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub OnionTalk Web Client & Relay" />
+    </a>
     <a href="https://github.com/sponsors/eriktonon">
       <img src="https://img.shields.io/badge/Sponsor-OnionTalk-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
     </a>
@@ -39,9 +42,10 @@
 
 ## 🚀 What's New in `v1.4.4` (`versionCode = 28` / Build 28) & Relay Mesh `v=27` — Post-Quantum Hybrid Encryption (`ML-KEM-768`), Dual Warm Socket Pool (~1.13s E2E), S/Kademlia XOR Routing & GossipSub v1.2
 
-- **📦 Direct Signed APK Downloads (`v1.4.4` — Latest Release Build 28)**:
+- **📦 Direct Signed APK Downloads & Web Container (`v1.4.4` — Latest Release Build 28)**:
   - **Main Messenger APK (`org.oniontalk.messenger` `v1.4.4` Build 28)**: [**Download `OnionTalk-v1.4.4.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.4-demo/OnionTalk-v1.4.4.apk) (`SHA-256: 02290a3e1d2b1719c7736aee898f6dcd0244fc5206d9e749770b1319615ab1ba`)
   - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.4.3` Build 7)**: [**Download `OnionTalk-RelayNode-v1.4.3.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.4-demo/OnionTalk-RelayNode-v1.4.3.apk) (`SHA-256: 14cb0acbff19947312af12df7ba092c7245084e432ffafb4b06c9008e838b4e4`)
+  - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) (`v1.4.4-build28` — `sha256:bea274efd03286867ee15febaf780a83f610b0c3fea5405de787f93551db57c2`) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
 - **🛡️ Key Cryptographic & P2P Mesh Breakthroughs in `v1.4.4` (`Build 28`)**:
   1. **Hybrid Post-Quantum Cryptography (`__ENC_PQC_KYBER768_X25519_V3__`)**: Combines classical **Dual X25519 ECDH** with **NIST FIPS 203 ML-KEM-768 (`Kyber-768`)** key encapsulation via `HKDF-SHA256` + `ChaCha20-Poly1305 AEAD` + `Ed25519` outer envelope signatures to protect against *Harvest Now, Decrypt Later* quantum adversaries.
   2. **Ultra-Fast E2E Delivery (`1.139s – 1.244s`, avg `1.20s`)**: Upgraded **Dual Warm Socket Pool** (`minWarmSockets = 2` per `.onion` gateway, `70s/75s` Keep-Alive) achieving **100% pre-warmed Tor circuit reuse (`0ms` SOCKS5 handshake)** alongside a `250ms` speculative *Hedged Send*.
@@ -159,6 +163,7 @@ This organization follows a modular structure for the OnionTalk protocol, relay 
 | Repository | Role | Stack | Status |
 | :--- | :--- | :--- | :--- |
 | [**`oniontalk-demo`**](https://github.com/onion-talk/oniontalk-demo) | Official Google Play App Link & Step-by-Step Visual Walkthrough (*Pablo & Bruna* Dual-Emulator Demo) | Android, SQLCipher, Tor v3, Documentation | ![Active](https://img.shields.io/badge/Google_Play-available-00C853?style=flat-square) |
+| [**`onion-talk-web`**](https://hub.docker.com/r/eriktonon/oniontalk-web) | Self-Contained Desktop & Web Client + Embedded Tor v3 Hidden Service Relay (`eriktonon/oniontalk-web:latest`, Private Source / Public Hardened Image) | Rust, Axum, Argon2id, ChaCha20-Poly1305, X3DH, Tor v3, Docker | ![Docker](https://img.shields.io/badge/Docker_Hub-v1.4.4--build28-2496ED?style=flat-square&logo=docker&logoColor=white) |
 | [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Ed25519-Authenticated Gossip PEX, RAM-Only Volatile Queues, and Cryptographic ACK Preimage Lock | Python 3.12, Flask, Gunicorn, Cryptography, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
 | [**`oniontalk-protocol`**](https://github.com/onion-talk/oniontalk-protocol) | OnionTalk Wire Protocol Specification, 4-Layer Cryptographic Stack, Epidemic Gossip Routing, and Anti-Censorship Manifesto | Markdown, Mermaid, Cryptographic Specs | ![Active](https://img.shields.io/badge/status-stable-1F6FEB?style=flat-square) |
 | [**`.github`**](https://github.com/onion-talk/.github) | Organization Profile, Community Health Files, Security Disclosure Policy, and Funding Configuration | GitHub Actions, YAML, Markdown | ![Active](https://img.shields.io/badge/status-active-00C853?style=flat-square) |
@@ -176,7 +181,69 @@ This organization follows a modular structure for the OnionTalk protocol, relay 
 
 ---
 
-## 🚀 Run a Relay Node in 60 Seconds
+## 🐳 Run OnionTalk Web Client + Embedded Tor v3 Relay (`Windows / Linux / macOS`)
+
+Run the full **OnionTalk Web Messenger & Embedded Tor v3 Relay (`v1.4.4-build28`)** locally on **Windows, Linux, or macOS** using the official pre-compiled, stripped Rust container image (`eriktonon/oniontalk-web:latest`):
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/19-oniontalk-web-container.png" width="820" alt="OnionTalk Web Container Interface" />
+</div>
+
+### Option 1: One-Line `docker run`
+```bash
+docker run -d \
+  --name oniontalk-web \
+  --restart unless-stopped \
+  --read-only \
+  --cap-drop ALL \
+  --security-opt no-new-privileges:true \
+  --pids-limit 128 \
+  --memory 512m \
+  --tmpfs /tmp:rw,noexec,nosuid,nodev,size=64m \
+  -p 127.0.0.1:8420:8420 \
+  -v oniontalk_web_vault:/data \
+  -v oniontalk_web_tor:/var/lib/tor \
+  eriktonon/oniontalk-web:latest
+```
+Then open **`http://127.0.0.1:8420`** in your browser.
+
+### Option 2: `docker-compose.yml`
+```yaml
+services:
+  oniontalk-web:
+    image: eriktonon/oniontalk-web:latest
+    container_name: oniontalk-web
+    restart: unless-stopped
+    read_only: true
+    pids_limit: 128
+    mem_limit: 512m
+    memswap_limit: 512m
+    ulimits:
+      core: 0
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=64m
+    ports:
+      - "127.0.0.1:8420:8420"
+    volumes:
+      - oniontalk_web_vault:/data
+      - oniontalk_web_tor:/var/lib/tor
+    environment:
+      - PORT=8420
+      - TOR_SOCKS_PORT=9050
+      - ONIONTALK_DATA_DIR=/data
+
+volumes:
+  oniontalk_web_vault:
+  oniontalk_web_tor:
+```
+
+---
+
+## 🚀 Run a Standalone Relay Node in 60 Seconds
 
 You can join the global OnionTalk federated mesh from any Linux server, VPS, Raspberry Pi, or home machine behind CGNAT. No port forwarding or domain name is required:
 

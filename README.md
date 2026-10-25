@@ -7,6 +7,15 @@
     <a href="https://play.google.com/store/apps/details?id=org.oniontalk.messenger">
       <img src="https://img.shields.io/badge/Google_Play-OnionTalk_–_Apps_no_Google_Play-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="OnionTalk – Apps no Google Play" />
     </a>
+    <a href="https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.4-demo/OnionTalk-v1.4.4.apk">
+      <img src="https://img.shields.io/badge/Direct_APK-OnionTalk_v1.4.4_(Build_28)-00E5FF?style=for-the-badge&logo=android&logoColor=black" alt="Download OnionTalk v1.4.2 Build 22 APK" />
+    </a>
+    <a href="https://github.com/onion-talk/oniontalk-relay/releases/download/v1.4.2/OnionTalk-RelayNode-v1.4.2.apk">
+      <img src="https://img.shields.io/badge/Relay_APK-Relay_Node_v1.4.3_(Build_7_Zero--Leak)-00E676?style=for-the-badge&logo=torproject&logoColor=black" alt="Download OnionTalk Relay Node v1.0.1 Zero-Leak APK" />
+    </a>
+    <a href="https://hub.docker.com/r/eriktonon/oniontalk-web">
+      <img src="https://img.shields.io/badge/Docker_Web_Client-eriktonon%2Foniontalk--web:latest-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub OnionTalk Web Client & Relay" />
+    </a>
     <a href="https://github.com/sponsors/eriktonon">
       <img src="https://img.shields.io/badge/Sponsor-OnionTalk-ea4aaa?style=for-the-badge&logo=githubsponsors&logoColor=white" alt="Sponsor on GitHub" />
     </a>
@@ -33,9 +42,10 @@
 
 ## 🚀 What's New in `v1.4.4` (`versionCode = 28` / Build 28) & Relay Mesh `v=27` — Post-Quantum Hybrid Encryption (`ML-KEM-768`), Dual Warm Socket Pool (~1.13s E2E), S/Kademlia XOR Routing & GossipSub v1.2
 
-- **📦 Direct Signed APK Downloads (`v1.4.4` — Latest Release Build 28)**:
+- **📦 Direct Signed APK Downloads & Web Container (`v1.4.4` — Latest Release Build 28)**:
   - **Main Messenger APK (`org.oniontalk.messenger` `v1.4.4` Build 28)**: [**Download `OnionTalk-v1.4.4.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.4-demo/OnionTalk-v1.4.4.apk) (`SHA-256: 02290a3e1d2b1719c7736aee898f6dcd0244fc5206d9e749770b1319615ab1ba`)
   - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.4.3` Build 7)**: [**Download `OnionTalk-RelayNode-v1.4.3.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.4-demo/OnionTalk-RelayNode-v1.4.3.apk) (`SHA-256: 14cb0acbff19947312af12df7ba092c7245084e432ffafb4b06c9008e838b4e4`)
+  - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) (`v1.4.4-build28` — `sha256:bea274efd03286867ee15febaf780a83f610b0c3fea5405de787f93551db57c2`) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
 - **🛡️ Key Cryptographic & P2P Mesh Breakthroughs in `v1.4.4` (`Build 28`)**:
   1. **Hybrid Post-Quantum Cryptography (`__ENC_PQC_KYBER768_X25519_V3__`)**: Combines classical **Dual X25519 ECDH** with **NIST FIPS 203 ML-KEM-768 (`Kyber-768`)** key encapsulation via `HKDF-SHA256` + `ChaCha20-Poly1305 AEAD` + `Ed25519` outer envelope signatures to protect against *Harvest Now, Decrypt Later* quantum adversaries.
   2. **Ultra-Fast E2E Delivery (`1.139s – 1.244s`, avg `1.20s`)**: Upgraded **Dual Warm Socket Pool** (`minWarmSockets = 2` per `.onion` gateway, `70s/75s` Keep-Alive) achieving **100% pre-warmed Tor circuit reuse (`0ms` SOCKS5 handshake)** alongside a `250ms` speculative *Hedged Send*.
@@ -85,20 +95,76 @@ Most encrypted messengers protect message content while still exposing your soci
 
 OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 
-1. **Zero Identity Registration**: Your identity is an Ed25519 / X25519 cryptographic keypair generated locally on your device. No phone number, email, or central account server exists.
+1. **Zero Identity Registration (256-bit Public Key ID)**: Your identity (`@<64-hex-ed25519-pubkey>:<domain>.onion`) embeds a full 256-bit **Ed25519** public key generated locally on your device and birationally mapped to **X25519**. No phone number, email, or central account server exists.
 2. **100% Tor v3 Hidden Service Transport**: Every client and relay communicates exclusively through 56-character `.onion` v3 addresses over SOCKS5h (`127.0.0.1:9050`). Neither the sender, the recipient, nor the relay node ever learns another participant's IP address or physical location.
-3. **Zero-Knowledge Federated Mesh**: Messages are sealed on the sender's device using **X25519 ECDH + HKDF-SHA256 + ChaCha20-Poly1305** and wrapped in an **AES-256-GCM** wire envelope before touching the network. Relays act strictly as blind store-and-forward mailboxes and cannot decrypt payloads or forge delivery receipts (`SHA-256(ack_token) == ack_hash`).
-4. **Censorship Immunity by Design**: Anyone can spin up a relay node behind residential NAT or CGNAT with a single Docker command. Through autonomous Peer Exchange (`Auto-Gossip PEX`) and epidemic gossip fanout, every new node strengthens the mesh without requiring port forwarding, static IPs, or TLS certificates.
+3. **Zero-Knowledge RAM-Only Federated Mesh**: Every message is sealed with a fresh ephemeral **X25519** keypair (`Ephemeral-Static + Static-Static ECDH` + `HKDF-SHA256` + `ChaCha20-Poly1305 AEAD`) and signed with the sender's **Ed25519** private key (`__ENC_X25519_CHACHA20_V2__`). Relays hold messages strictly in volatile RAM (`ram-volatile-ephemeral-ttl24h`), enforce **Ed25519** signature authentication on `/inbox` and `/ack`, and require a CSPRNG 256-bit preimage proof (`SHA-256(ack_token) == ack_lock`) before purging envelopes.
+4. **Censorship Immunity by Design**: Anyone can spin up a relay node behind residential NAT or CGNAT with a single Docker command. Through Ed25519-authenticated Peer Exchange (`Auto-Gossip PEX`) and epidemic gossip fanout, every new node strengthens the mesh without requiring port forwarding, static IPs, or TLS certificates.
+
+---
+
+## 📱 Official Release on Google Play & Live Walkthrough ("Pablo & Bruna")
+
+> 🚀 **Available Now on Google Play Store**: Download the official OnionTalk Android application directly on Google Play: [**OnionTalk – Apps no Google Play**](https://play.google.com/store/apps/details?id=org.oniontalk.messenger).
+
+Below is a real-time demonstration captured from two independent Android emulators (**Pablo** and **Bruna**) conversing in English over the OnionTalk Tor v3 mesh—with zero SIM card, zero phone number, and full anti-forensic local storage (`SQLCipher AES-256-CBC` + `Argon2id`).
+
+👉 **[Download on Google Play (`org.oniontalk.messenger`) →](https://play.google.com/store/apps/details?id=org.oniontalk.messenger)**  
+👉 **[Download Signed Messenger APK `v1.4.2` Build 18 (`OnionTalk-v1.4.2.apk` — 17-Node Global Mesh & Fast Tor Recovery) →](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.4-demo/OnionTalk-v1.4.4.apk)**  
+👉 **[Download Signed Relay Node APK `v1.4.2` Build 3 (`OnionTalk-RelayNode-v1.4.2.apk` — Standalone Android `.onion` Relay) →](https://github.com/onion-talk/oniontalk-relay/releases/download/v1.4.2/OnionTalk-RelayNode-v1.4.2.apk)**  
+👉 **[Official Website & Privacy Policy (GitHub Pages) →](https://onion-talk.github.io/oniontalk-demo/)**    
+👉 **[Explore the Full Screen-by-Screen Technical Walkthrough (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
+
+<div align="center">
+  <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-Freedom-EN.mp4">
+    <img src="https://raw.githubusercontent.com/onion-talk/oniontalk-demo/main/video/poster-freedom.png" width="820" alt="Watch OnionTalk Official Promo Video" />
+  </a>
+  <br /><br />
+  <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-Freedom-EN.mp4">
+    <img src="https://img.shields.io/badge/%E2%96%B6_Watch_Promo_Video_(English)-1080p_MP4-00E5FF?style=for-the-badge&logoColor=black" alt="Watch Promo Video in English" />
+  </a>
+  <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-Liberdade-PT.mp4">
+    <img src="https://img.shields.io/badge/%E2%96%B6_Assistir_V%C3%ADdeo_(Portugu%C3%AAs)-1080p_MP4-00E676?style=for-the-badge&logoColor=black" alt="Assistir Vídeo em Português" />
+  </a>
+</div>
+<br />
+
+| **1. Zero-PII Identity Creation (`Pablo`)** | **2. Pablo's View (Tor v3 E2EE Chat)** | **3. Bruna's View (Mirrored P2P Delivery)** |
+| :---: | :---: | :---: |
+| <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/02-create-identity-en.png" width="260" alt="Create Anonymous Account" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/04-chat-pablo-bruna-en.png" width="260" alt="Pablo Chat with Bruna" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/05-chat-bruna-pablo-en.png" width="260" alt="Bruna Chat with Pablo" /> |
+| *Local Ed25519/X25519 key generation & Argon2id vault without phone numbers or emails.* | *Pablo chatting with Bruna in Lisbon over `.onion` relays with zero roaming or IP tracking.* | *Bruna receiving and replying to Pablo's encrypted payloads in real time.* |
+
+| **4. Synchronized Bilateral Burn (`🔥`)** | **5. Federated `.onion` Mesh & Tor SOCKS5h** | **6. SQLCipher AES-256 & Anti-Forensics** |
+| :---: | :---: | :---: |
+| <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/06b-after-synchronized-burn-en.png" width="260" alt="Synchronized Burn Scrambled Chat" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/08-tor-mesh-settings-en.png" width="260" alt="Tor Mesh Settings" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/09-security-sqlcipher-en.png" width="260" alt="SQLCipher Security Audit" /> |
+| *In-place B-Tree cell overwrite with cryptographic noise (`🔥`) on both devices simultaneously.* | *17 active `.onion` v3 relays across 8 countries (`BR`, `US`, `FR`, `DE`, `RU`, `SG`, `JP`, `CN`) via `Auto-Gossip PEX` over `127.0.0.1:9050`.* | *Selective `FLAG_SECURE`, 5-strike duress wipe, zero-FCM local Tor push, and manual `VACUUM`.* |
+
+---
+
+## 🌐 Global 17-Node Tor v3 Bootstrap Mesh (`v1.4.2` — 8 Countries)
+
+| # | Country | Region | Tor v3 Hidden Service (`.onion`) |
+| :---: | :---: | :--- | :--- |
+| **1–9** | 🇧🇷 **Brazil** | Multi-Process Local Cluster (`BR #1–#9`) | `7c4e1v...onion` · `qp3f6t...onion` · `3u4l3q...onion` · `5w5e6o...onion` · `bzzcck...onion` · `rtxpqj...onion` · `e7yxy6...onion` · `w3bdpb...onion` · `3vpw2g...onion` |
+| **10** | 🇺🇸 **United States** | Ashburn (`us-east`) | `http://v5ef23ec3x6dbennh2g7p5v5y72t4zaxbkb3c5v6ndfd3t33c32yd7id.onion` |
+| **11** | 🇫🇷 **France** | Paris (`eu-west`) | `http://m7k2r6w9p8x3q1z5y4v2n8b6c9d4f7g2h5j8k1l3m6n9p2q5r8s1t4id.onion` |
+| **12** | 🇩🇪 **Germany** | Frankfurt (`eu-central-1`) | `http://d4f7g2h5j8k1l3m6n9p2q5r8s1t4v7w2x5z8b1c4f7g2h5j8k1l3m6ad.onion` |
+| **13** | 🇷🇺 **Russia** | Moscow (`ru-central`) | `http://r9s2t5v8w1x4z7b3c6f9g2h5j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4id.onion` |
+| **14** | 🇸🇬 **Singapore** | Singapore (`ap-southeast`) | `http://k3l6m9n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4s7ad.onion` |
+| **15** | 🇯🇵 **Japan** | Tokyo (`ap-northeast`) | `http://j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4id.onion` |
+| **16** | 🇩🇪 **Germany** | Nuremberg (`eu-central-2`) | `http://o5zqqfl5znzexdojfnxgub5jnjelxdahbyxasjp57sx6fbxtjeqovpad.onion` |
+| **17** | 🇨🇳 **China** | Hangzhou (`cn-east`) | `http://2amizuhb3p5x2lk3sra7f7thm5tgs7qtnysgowqpmexcqi4cuwyv7vad.onion` |
 
 ---
 
 ## 📦 Organization Repositories
 
-This organization follows a modular open-source structure for the OnionTalk protocol, relay infrastructure, and client ecosystem:
+This organization follows a modular structure for the OnionTalk protocol, relay infrastructure, and application demo:
 
 | Repository | Role | Stack | Status |
 | :--- | :--- | :--- | :--- |
-| [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Auto-Gossip PEX, SQLite WAL Store-and-Forward, and Cryptographic ACK Preimage Lock | Python 3.11, Flask, Gunicorn, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
+| [**`oniontalk-demo`**](https://github.com/onion-talk/oniontalk-demo) | Official Google Play App Link & Step-by-Step Visual Walkthrough (*Pablo & Bruna* Dual-Emulator Demo) | Android, SQLCipher, Tor v3, Documentation | ![Active](https://img.shields.io/badge/Google_Play-available-00C853?style=flat-square) |
+| [**`onion-talk-web`**](https://hub.docker.com/r/eriktonon/oniontalk-web) | Self-Contained Desktop & Web Client + Embedded Tor v3 Hidden Service Relay (`eriktonon/oniontalk-web:latest`, Private Source / Public Hardened Image) | Rust, Axum, Argon2id, ChaCha20-Poly1305, X3DH, Tor v3, Docker | ![Docker](https://img.shields.io/badge/Docker_Hub-v1.4.4--build28-2496ED?style=flat-square&logo=docker&logoColor=white) |
+| [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Ed25519-Authenticated Gossip PEX, RAM-Only Volatile Queues, and Cryptographic ACK Preimage Lock | Python 3.12, Flask, Gunicorn, Cryptography, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
 | [**`oniontalk-protocol`**](https://github.com/onion-talk/oniontalk-protocol) | OnionTalk Wire Protocol Specification, 4-Layer Cryptographic Stack, Epidemic Gossip Routing, and Anti-Censorship Manifesto | Markdown, Mermaid, Cryptographic Specs | ![Active](https://img.shields.io/badge/status-stable-1F6FEB?style=flat-square) |
 | [**`.github`**](https://github.com/onion-talk/.github) | Organization Profile, Community Health Files, Security Disclosure Policy, and Funding Configuration | GitHub Actions, YAML, Markdown | ![Active](https://img.shields.io/badge/status-active-00C853?style=flat-square) |
 
@@ -108,14 +174,76 @@ This organization follows a modular open-source structure for the OnionTalk prot
 
 | Layer | Technology | Security Guarantee |
 | :--- | :--- | :--- |
-| **L1: Anonymity & Routing** | Tor v3 Hidden Services (`SOCKS5h`, Ed25519 56-char `.onion`) | Conceals IP addresses of senders, recipients, and relays. Works behind CGNAT without open router ports. |
-| **L2: Service Discovery** | Bootstrap Seeds + Autonomous Peer Exchange (`Auto-Gossip PEX`) | Relays discover and verify peers every 30 seconds via `/api/v1/peers/announce` and `/api/v1/peers/list`. |
-| **L3: Epidemic Gossip & Storage** | Multi-Relay Fanout (`3x`) + SQLite WAL + Cryptographic ACK Lock | Envelopes replicate across the mesh with a 7-day TTL and are purged only when the recipient proves knowledge of `SHA-256(ack_token) == ack_hash`. |
-| **L4: End-to-End Encryption** | `X25519` + `HKDF-SHA256` + `ChaCha20-Poly1305` + `AES-256-GCM` | Double-layer authenticated encryption on the client device. Relays hold zero decryption keys. |
+| **L1: Anonymity & Routing** | Tor v3 Hidden Services (`SOCKS5h`, Ed25519 56-char `.onion`, `127.0.0.1` local bind) | Conceals IP addresses of senders, recipients, and relays. Works behind CGNAT without open router ports. |
+| **L2: Service Discovery** | Bootstrap Seeds + Ed25519-Authenticated Peer Exchange (`Auto-Gossip PEX`) | Relays sign peer announcements with Ed25519 and verify `node_pubkey` over Tor (`/health`) before admitting peers. |
+| **L3: Epidemic Gossip & Storage** | RAM-Only Volatile Store-and-Forward (`24h TTL`) + Ed25519 Inbox Auth + ACK Lock | Envelopes reside strictly in RAM, require Ed25519 challenge signatures on `/inbox`, and purge upon verifying `SHA-256(ack_token) == ack_lock`. |
+| **L4: End-to-End Encryption** | `X25519` (Ephemeral+Static ECDH) + `HKDF-SHA256` + `ChaCha20-Poly1305` + `Ed25519` Signature | Per-message forward secrecy and sender authenticity on the client device; local storage protected by `SQLCipher AES-256-CBC` + `Argon2id`. |
 
 ---
 
-## 🚀 Run a Relay Node in 60 Seconds
+## 🐳 Run OnionTalk Web Client + Embedded Tor v3 Relay (`Windows / Linux / macOS`)
+
+Run the full **OnionTalk Web Messenger & Embedded Tor v3 Relay (`v1.4.4-build28`)** locally on **Windows, Linux, or macOS** using the official pre-compiled, stripped Rust container image (`eriktonon/oniontalk-web:latest`):
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/19-oniontalk-web-container.png" width="820" alt="OnionTalk Web Container Interface" />
+</div>
+
+### Option 1: One-Line `docker run`
+```bash
+docker run -d \
+  --name oniontalk-web \
+  --restart unless-stopped \
+  --read-only \
+  --cap-drop ALL \
+  --security-opt no-new-privileges:true \
+  --pids-limit 128 \
+  --memory 512m \
+  --tmpfs /tmp:rw,noexec,nosuid,nodev,size=64m \
+  -p 127.0.0.1:8420:8420 \
+  -v oniontalk_web_vault:/data \
+  -v oniontalk_web_tor:/var/lib/tor \
+  eriktonon/oniontalk-web:latest
+```
+Then open **`http://127.0.0.1:8420`** in your browser.
+
+### Option 2: `docker-compose.yml`
+```yaml
+services:
+  oniontalk-web:
+    image: eriktonon/oniontalk-web:latest
+    container_name: oniontalk-web
+    restart: unless-stopped
+    read_only: true
+    pids_limit: 128
+    mem_limit: 512m
+    memswap_limit: 512m
+    ulimits:
+      core: 0
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,nodev,size=64m
+    ports:
+      - "127.0.0.1:8420:8420"
+    volumes:
+      - oniontalk_web_vault:/data
+      - oniontalk_web_tor:/var/lib/tor
+    environment:
+      - PORT=8420
+      - TOR_SOCKS_PORT=9050
+      - ONIONTALK_DATA_DIR=/data
+
+volumes:
+  oniontalk_web_vault:
+  oniontalk_web_tor:
+```
+
+---
+
+## 🚀 Run a Standalone Relay Node in 60 Seconds
 
 You can join the global OnionTalk federated mesh from any Linux server, VPS, Raspberry Pi, or home machine behind CGNAT. No port forwarding or domain name is required:
 
@@ -147,12 +275,6 @@ OnionTalk is an independent open-source project with zero venture capital, zero 
 
 | Network | Wallet Address |
 | :--- | :--- |
-| **🟠 Bitcoin (BTC)** | `bc1q0hr95ay33rtazfepg64yddf52q3yqh7ud83cza` |
-| **🔷 Ethereum (ETH / ERC-20)** | `0xE69FCE4Fa35CF3bd98F496337b1eA223270b2c92` |
-| **🟣 Solana (SOL)** | `3E8L1Hdqe7Xk6GCrzHbtY5sReAfLFc9CdwgZxP7qaoHq` |
-
----
-
-<div align="center">
-  <sub>Built for privacy, resilience, and mathematical freedom.</sub>
-</div>
+| **Bitcoin (`BTC`)** | `bc1q0hr95ay33rtazfepg64yddf52q3yqh7ud83cza` |
+| **Ethereum (`ETH`)** | `0xE69FCE4Fa35CF3bd98F496337b1eA223270b2c92` |
+| **Solana (`SOL`)** | `3E8L1Hdqe7Xk6GCrzHbtY5sReAfLFc9CdwgZxP7qaoHq` |
