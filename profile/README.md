@@ -112,7 +112,15 @@ Below is a real-time demonstration captured from two independent Android emulato
 👉 **[Download Signed Messenger APK `v1.4.2` Build 18 (`OnionTalk-v1.4.2.apk` — 17-Node Global Mesh & Fast Tor Recovery) →](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.4.4-demo/OnionTalk-v1.4.4.apk)**  
 👉 **[Download Signed Relay Node APK `v1.4.2` Build 3 (`OnionTalk-RelayNode-v1.4.2.apk` — Standalone Android `.onion` Relay) →](https://github.com/onion-talk/oniontalk-relay/releases/download/v1.4.2/OnionTalk-RelayNode-v1.4.2.apk)**  
 👉 **[Official Website & Privacy Policy (GitHub Pages) →](https://onion-talk.github.io/oniontalk-demo/)**    
+👉 **[Official Instagram (`@oniontalk.app`) →](https://www.instagram.com/oniontalk.app/)**  
 👉 **[Explore the Full Screen-by-Screen Technical Walkthrough (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
+
+> **💬 Ao Baixar / After Downloading:**
+> Ao baixar o OnionTalk (Android ou Desktop/Web), **entre em contato pelo próprio app com um de nossos administradores**:
+> ```text
+> @54d5b5d3cc6b4406b5b46a6faa6b4208b14a3ce64cae6dd4a6862783f87151cd:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
+> ```
+> 📸 **Instagram Oficial:** [https://www.instagram.com/oniontalk.app/](https://www.instagram.com/oniontalk.app/) (`@oniontalk.app`)
 
 <div align="center">
   <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-Freedom-EN.mp4">
@@ -278,3 +286,13 @@ OnionTalk is an independent open-source project with zero venture capital, zero 
 | **Bitcoin (`BTC`)** | `bc1q0hr95ay33rtazfepg64yddf52q3yqh7ud83cza` |
 | **Ethereum (`ETH`)** | `0xE69FCE4Fa35CF3bd98F496337b1eA223270b2c92` |
 | **Solana (`SOL`)** | `3E8L1Hdqe7Xk6GCrzHbtY5sReAfLFc9CdwgZxP7qaoHq` |
+
+### 💬 Doação por Outros Meios & Contato do Administrador pelo App
+
+Ao baixar o app ou **em caso de doação por algum outro meio**, entre em contato diretamente pelo OnionTalk com um de nossos administradores:
+
+```text
+@54d5b5d3cc6b4406b5b46a6faa6b4208b14a3ce64cae6dd4a6862783f87151cd:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
+```
+
+- 📸 **Instagram Oficial:** [https://www.instagram.com/oniontalk.app/](https://www.instagram.com/oniontalk.app/) (`@oniontalk.app`)
