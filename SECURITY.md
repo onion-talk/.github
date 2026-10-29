@@ -13,5 +13,5 @@ OnionTalk is engineered under a strict Zero-Trust / Zero-Knowledge threat model:
 If you discover a cryptographic flaw, deanonymization vector, or denial-of-service vulnerability in the OnionTalk protocol or relay implementation:
 
 1. **Do not open a public GitHub issue** for unpatched security vulnerabilities.
-2. Report the finding via [GitHub Private Vulnerability Reporting](https://github.com/onion-talk/oniontalk-relay/security/advisories/new) or contact the maintainer directly via `@eriktonon`.
+2. Report the finding via [GitHub Private Vulnerability Reporting](https://github.com/onion-talk/oniontalk-relay/security/advisories/new) or contact the security team directly via `security@oniontalk.org`.
 3. Include a minimal reproduction script or proof-of-concept and the affected component (`oniontalk-relay`, `oniontalk-protocol`, or client).
