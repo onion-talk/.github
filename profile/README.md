@@ -119,7 +119,7 @@ Below is a real-time demonstration captured from two independent Android emulato
 > **💬 Ao Baixar / After Downloading:**
 > Ao baixar o OnionTalk (Android ou Desktop/Web), **entre em contato pelo próprio app com um de nossos administradores**:
 > ```text
-> @54d5b5d3cc6b4406b5b46a6faa6b4208b14a3ce64cae6dd4a6862783f87151cd:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
+> @bbac48f99ed4536ce9134df16cc49dbed2d9109ed351710d181d86c28f34efd9:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
 > ```
 > 📸 **Instagram Oficial:** [https://www.instagram.com/oniontalk.app/](https://www.instagram.com/oniontalk.app/) (`@oniontalk.app`)
 
@@ -293,7 +293,7 @@ OnionTalk is an independent open-source project with zero venture capital, zero 
 Ao baixar o app ou **em caso de doação por algum outro meio**, entre em contato diretamente pelo OnionTalk com um de nossos administradores:
 
 ```text
-@54d5b5d3cc6b4406b5b46a6faa6b4208b14a3ce64cae6dd4a6862783f87151cd:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
+@bbac48f99ed4536ce9134df16cc49dbed2d9109ed351710d181d86c28f34efd9:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
 ```
 
 - 📸 **Instagram Oficial:** [https://www.instagram.com/oniontalk.app/](https://www.instagram.com/oniontalk.app/) (`@oniontalk.app`)
