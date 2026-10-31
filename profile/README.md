@@ -7,11 +7,11 @@
     <a href="https://play.google.com/store/apps/details?id=org.oniontalk.messenger">
       <img src="https://img.shields.io/badge/Google_Play-OnionTalk_–_Apps_no_Google_Play-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="OnionTalk – Apps no Google Play" />
     </a>
-    <a href="https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.4/OnionTalk-v1.5.4.apk">
-      <img src="https://img.shields.io/badge/Direct_APK-OnionTalk_v1.5.4_(Build_48)-00E5FF?style=for-the-badge&logo=android&logoColor=black" alt="Download OnionTalk v1.4.2 Build 22 APK" />
+    <a href="https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk">
+      <img src="https://img.shields.io/github/v/release/onion-talk/oniontalk-demo?label=Direct%20APK&color=00E5FF&style=for-the-badge&logo=android&logoColor=black" alt="Download the latest OnionTalk APK" />
     </a>
-    <a href="https://github.com/onion-talk/oniontalk-relay/releases/download/v1.5.2/OnionTalk-RelayNode-v1.5.2.apk">
-      <img src="https://img.shields.io/badge/Relay_APK-Relay_Node_v1.5.2_(Build_11_Zero--Leak)-00E676?style=for-the-badge&logo=torproject&logoColor=black" alt="Download OnionTalk Relay Node v1.0.1 Zero-Leak APK" />
+    <a href="https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk">
+      <img src="https://img.shields.io/github/v/release/onion-talk/oniontalk-relay?label=Relay%20APK&color=00E676&style=for-the-badge&logo=torproject&logoColor=black" alt="Download the latest OnionTalk Relay Node APK" />
     </a>
     <a href="https://hub.docker.com/r/eriktonon/oniontalk-web">
       <img src="https://img.shields.io/badge/Docker_Web_Client-eriktonon%2Foniontalk--web:latest-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker Hub OnionTalk Web Client & Relay" />
@@ -43,9 +43,9 @@
 ## 🚀 What's New in `v1.5.4` (`versionCode = 48` / Build 48) & Relay Node `v1.5.2` (`Build 11`) & Mesh `v=31` — Sovereign PQC Groups, In-RAM Image Blur Studio, Post-Quantum Hybrid Encryption (`ML-KEM-768`), Dual Warm Socket Pool (`~1.13s` E2E) & 20-Node Zero-Leak Mesh
 
 - **📦 Direct Signed APK Downloads & Web Container (`v1.5.4` — Latest Release Build 48)**:
-  - **Main Messenger APK (`org.oniontalk.messenger` `v1.5.4` Build 48)**: [**Download `OnionTalk-v1.5.4.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.4/OnionTalk-v1.5.4.apk) (`SHA-256: 8593569ad6f939150951ac59ca715ac2ee6534d15c591a4503fb2b8401292acf`)
-  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.5.2` Build 11)**: [**Download `OnionTalk-RelayNode-v1.5.2.apk`**](https://github.com/onion-talk/oniontalk-relay/releases/download/v1.5.2/OnionTalk-RelayNode-v1.5.2.apk) (`SHA-256: eac1ccbe461eabb9f42a6485628c0d9b3cce0f378ba217572a1beba975c5279c`)
-  - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) (`v1.5.4-build48` — `sha256:f0f2912ef2c675f29f30d3f6cb7259b2724b435ab37208f20bc23a86e676d1b1`) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
+  - **Main Messenger APK (`org.oniontalk.messenger` `v1.5.4` Build 48)**: [**Download `OnionTalk.apk` (latest)**](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/SHA256SUMS.txt))
+  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.5.2` Build 11)**: [**Download `OnionTalk-RelayNode.apk` (latest)**](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/SHA256SUMS.txt))
+  - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) ![Docker tag](https://img.shields.io/docker/v/eriktonon/oniontalk-web?sort=semver&label=tag&style=flat-square) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
 
 - **🛡️ Key Cryptographic & P2P Mesh Breakthroughs in `v1.5.4` (`Build 48` & Relay `Build 10`)**:
   1. **Sovereign Post-Quantum Encrypted Groups (`PQC Groups`) & Anti-Spam Proof-of-Community**: End-to-end encrypted multi-party group chats over Tor v3 with zero central member servers. Group creation unlocks automatically via organic local proof-of-community (`3+ mutual contacts` + `5+ days of vault maturity`, evaluated 100% locally) or immediately via an offline `Ed25519`-signed **`FounderPass`** certificate granted to community Relay Node Operators (`2+ hours active uptime`) or voluntary crypto supporters.
@@ -57,11 +57,7 @@
 ---
 ## 🚀 What's New in `v1.4.2` (`versionCode = 18` / Internal `vc17`) — Password-Locked Messages & Chats, Unified Long-Press Menu, Profile Photo Privacy, 15s Auto-Lock & Official Video Suite
 
-- **📦 Direct Signed APK Downloads (`v1.4.2` — Latest Fixed Build 18)**:
-  - **Main Messenger APK (`org.oniontalk.messenger` `v1.4.2` Build 18)**: [**Download `OnionTalk-v1.5.4.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.4/OnionTalk-v1.5.4.apk) (`SHA-256: 68f3d5785919acaf0820c238f93f5db0cb02df5986db457ec783d573dbc652a8`)
-  - **Release Build 18 APK (`versionCode = 18`)**: [**Download `OnionTalk-v1.4.1-b18-release.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.4/OnionTalk-v1.5.4.apk)
-  - **Internal Test Track Build 17 APK (`versionCode = 17`)**: [**Download `OnionTalk-v1.4.1-b17-internal.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.4/OnionTalk-v1.5.4.apk) (`SHA-256: b110ff9db1b75bf4ec6229284a6dd2f47040175003974f8a50bfe9ef2f100c5c`)
-  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.4.2` Build 3)**: [**Download `OnionTalk-RelayNode-v1.4.2.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.4/OnionTalk-v1.5.4.apk) (`SHA-256: 08b926aaa7e52c14373a8c1038384835e34f82ef6dc0c6c4782e3a795aa95a96`)
+- 📦 Older binaries are not mirrored here. Latest signed build: [GitHub Releases](https://github.com/onion-talk/oniontalk-demo/releases).
 - **🎬 New Official `v1.4.2` Promotional & Feature Walkthrough Videos**:
   - [**▶ Watch Official Promo v1.4.1 (Português 1080p)**](https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-v1.4.1-Promo-Oficial-PT.mp4)
   - [**▶ Watch Official Promo v1.4.1 (English 1080p)**](https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-v1.4.1-Promo-Official-EN.mp4)
@@ -110,8 +106,8 @@ OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 Below is a real-time demonstration captured from two independent Android emulators (**Pablo** and **Bruna**) conversing in English over the OnionTalk Tor v3 mesh—with zero SIM card, zero phone number, and full anti-forensic local storage (`SQLCipher AES-256-CBC` + `Argon2id`).
 
 👉 **[Download on Google Play (`org.oniontalk.messenger`) →](https://play.google.com/store/apps/details?id=org.oniontalk.messenger)**  
-👉 **[Download Signed Messenger APK `v1.4.2` Build 18 (`OnionTalk-v1.4.2.apk` — 17-Node Global Mesh & Fast Tor Recovery) →](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.4/OnionTalk-v1.5.4.apk)**  
-👉 **[Download Signed Relay Node APK `v1.4.2` Build 3 (`OnionTalk-RelayNode-v1.4.2.apk` — Standalone Android `.onion` Relay) →](https://github.com/onion-talk/oniontalk-relay/releases/download/v1.5.2/OnionTalk-RelayNode-v1.5.2.apk)**  
+👉 **[Download the latest signed Messenger APK →](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk)**  
+👉 **[Download the latest signed Relay Node APK →](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk)**  
 👉 **[Official Website & Privacy Policy (GitHub Pages) →](https://onion-talk.github.io/oniontalk-demo/)**    
 👉 **[Official Instagram (`@oniontalk.app`) →](https://www.instagram.com/oniontalk.app/)**  
 👉 **[Explore the Full Screen-by-Screen Technical Walkthrough (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
@@ -192,7 +188,7 @@ This organization follows a modular structure for the OnionTalk protocol, relay 
 
 ## 🐳 Run OnionTalk Web Client + Embedded Tor v3 Relay (`Windows / Linux / macOS`)
 
-Run the full **OnionTalk Web Messenger & Embedded Tor v3 Relay (`v1.5.4-build48`)** locally on **Windows, Linux, or macOS** using the official pre-compiled, stripped Rust container image (`eriktonon/oniontalk-web:latest`):
+Run the full **OnionTalk Web Messenger & Embedded Tor v3 Relay** locally on **Windows, Linux, or macOS** using the official pre-compiled, stripped Rust container image (`eriktonon/oniontalk-web:latest`):
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/19-oniontalk-web-container.png" width="820" alt="OnionTalk Web Container Interface" />
