@@ -43,8 +43,8 @@
 ## 🚀 What's New in `v1.5.5` (`versionCode = 49` / Build 49) & Relay Node `v1.5.2` (`Build 11`) & Mesh `v=31` — Sovereign PQC Groups, In-RAM Image Blur Studio, Post-Quantum Hybrid Encryption (`ML-KEM-768`), Dual Warm Socket Pool (`~1.13s` E2E) & 20-Node Zero-Leak Mesh
 
 - **📦 Direct Signed APK Downloads & Web Container (`v1.5.5` — Latest Release Build 49)**:
-  - **Main Messenger APK (`org.oniontalk.messenger` `v1.5.5` Build 49)**: [**Download `OnionTalk-v1.5.5.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.5/OnionTalk-v1.5.5.apk) (`SHA-256: f3bcae389be4f08a7b537b327e275f5b5e21d868bc10cd634aa4bb73eb5691af`)
-  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.5.2` Build 11)**: [**Download `OnionTalk-RelayNode-v1.5.2.apk`**](https://github.com/onion-talk/oniontalk-relay/releases/download/v1.5.2/OnionTalk-RelayNode-v1.5.2.apk) (`SHA-256: a9bbe48f53bb21cd92e1c6fdbd5798bcba5ad31d5b3b244b0959be30342e8019`)
+  - **Main Messenger APK (`org.oniontalk.messenger` `v1.5.5` Build 49)**: [**Download `OnionTalk-v1.5.5.apk`**](https://github.com/onion-talk/oniontalk-demo/releases/download/v1.5.5/OnionTalk-v1.5.5.apk) (`SHA-256: 3812e769ebc9a651222c1dfb053292b61412570075caf9beaf57c1b9b5611482`)
+  - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.5.2` Build 11)**: [**Download `OnionTalk-RelayNode-v1.5.2.apk`**](https://github.com/onion-talk/oniontalk-relay/releases/download/v1.5.2/OnionTalk-RelayNode-v1.5.2.apk) (`SHA-256: 2681591075294ca71237f596dfa394acd355ea599838971f4eee436fb946d1ca`)
   - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) (`v1.5.5-build49` — `sha256:f0f2912ef2c675f29f30d3f6cb7259b2724b435ab37208f20bc23a86e676d1b1`) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
 
 - **🛡️ Key Cryptographic & P2P Mesh Breakthroughs in `v1.5.5` (`Build 49` & Relay `Build 10`)**:
