@@ -153,17 +153,16 @@ Below is a real-time demonstration captured from two independent Android emulato
 
 ## 🌐 Global 17-Node Tor v3 Bootstrap Mesh (`v1.4.2` — 8 Countries)
 
-| # | Country | Region | Tor v3 Hidden Service (`.onion`) |
-| :---: | :---: | :--- | :--- |
-| **1–9** | 🇧🇷 **Brazil** | Multi-Process Local Cluster (`BR #1–#9`) | `7c4e1v...onion` · `qp3f6t...onion` · `3u4l3q...onion` · `5w5e6o...onion` · `bzzcck...onion` · `rtxpqj...onion` · `e7yxy6...onion` · `w3bdpb...onion` · `3vpw2g...onion` |
-| **10** | 🇺🇸 **United States** | Ashburn (`us-east`) | `http://v5ef23ec3x6dbennh2g7p5v5y72t4zaxbkb3c5v6ndfd3t33c32yd7id.onion` |
-| **11** | 🇫🇷 **France** | Paris (`eu-west`) | `http://m7k2r6w9p8x3q1z5y4v2n8b6c9d4f7g2h5j8k1l3m6n9p2q5r8s1t4id.onion` |
-| **12** | 🇩🇪 **Germany** | Frankfurt (`eu-central-1`) | `http://d4f7g2h5j8k1l3m6n9p2q5r8s1t4v7w2x5z8b1c4f7g2h5j8k1l3m6ad.onion` |
-| **13** | 🇷🇺 **Russia** | Moscow (`ru-central`) | `http://r9s2t5v8w1x4z7b3c6f9g2h5j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4id.onion` |
-| **14** | 🇸🇬 **Singapore** | Singapore (`ap-southeast`) | `http://k3l6m9n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4s7ad.onion` |
-| **15** | 🇯🇵 **Japan** | Tokyo (`ap-northeast`) | `http://j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4id.onion` |
-| **16** | 🇩🇪 **Germany** | Nuremberg (`eu-central-2`) | `http://o5zqqfl5znzexdojfnxgub5jnjelxdahbyxasjp57sx6fbxtjeqovpad.onion` |
-| **17** | 🇨🇳 **China** | Hangzhou (`cn-east`) | `http://2amizuhb3p5x2lk3sra7f7thm5tgs7qtnysgowqpmexcqi4cuwyv7vad.onion` |
+| Região / País | Nós Relays Ativos | Descoberta & Topologia |
+| :--- | :---: | :--- |
+| 🇧🇷 **Brasil (América do Sul)** | `3` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇺🇸 **Estados Unidos (América do Norte)** | `8` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇫🇷 **França (Europa Ocidental)** | `3` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇷🇺 **Rússia (Eurásia)** | `2` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇩🇪 **Alemanha (Europa Central)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇸🇬 **Singapura (Sudeste Asiático)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇯🇵 **Japão (Ásia-Pacífico)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇨🇳 **China (Ásia Oriental)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
 
 ---
 
