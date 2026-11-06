@@ -5,7 +5,10 @@
 
   <p>
     <a href="https://play.google.com/store/apps/details?id=org.oniontalk.messenger">
-      <img src="https://img.shields.io/badge/Google_Play-OnionTalk_–_Apps_no_Google_Play-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="OnionTalk – Apps no Google Play" />
+      <img src="https://img.shields.io/badge/Google_Play-Open_Beta_(org.oniontalk.messenger)-3DDC84?style=for-the-badge&logo=google-play&logoColor=black" alt="OnionTalk – Google Play Open Beta" />
+    </a>
+    <a href="https://play.google.com/apps/testing/org.oniontalk.messenger">
+      <img src="https://img.shields.io/badge/Play_Testing-Join_Open_Beta_(Web)-10B981?style=for-the-badge&logo=android&logoColor=black" alt="Join OnionTalk Open Beta on Web" />
     </a>
     <a href="https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk">
       <img src="https://img.shields.io/github/v/release/onion-talk/oniontalk-demo?label=Direct%20APK&color=00E5FF&style=for-the-badge&logo=android&logoColor=black" alt="Download the latest OnionTalk APK" />
@@ -40,14 +43,22 @@
 
 ---
 
-## 🚀 What's New in `v1.5.4` (`versionCode = 48` / Build 48) & Relay Node `v1.5.2` (`Build 11`) & Mesh `v=31` — Sovereign PQC Groups, In-RAM Image Blur Studio, Post-Quantum Hybrid Encryption (`ML-KEM-768`), Dual Warm Socket Pool (`~1.13s` E2E) & 20-Node Zero-Leak Mesh
+## 🚀 What's New in `v1.6.1` (`versionCode = 57` / Build 57) & Relay Node `v1.6.1` (100% Rust Native `oniontalk-relay-rs`) — Sub-700ms OnionVoice V1 PQC Voice Calls, Pop-on-Read Voice Stream, Sovereign PQC Groups, Real Web Mic Recording & 35-Node Zero-Leak Mesh
 
-- **📦 Direct Signed APK Downloads & Web Container (`v1.5.4` — Latest Release Build 48)**:
-  - **Main Messenger APK (`org.oniontalk.messenger` `v1.5.4` Build 48)**: [**Download `OnionTalk.apk` (latest)**](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/SHA256SUMS.txt))
+- **📦 Official Google Play Open Beta, Direct Signed APK Downloads & Web Container (`v1.6.1` — Build 57)**:
+  - **▶️ Google Play Store (Official Open Beta)**: [**Install on Google Play (`org.oniontalk.messenger`)**](https://play.google.com/store/apps/details?id=org.oniontalk.messenger) · [**Join Open Testing on Web (`apps/testing`)**](https://play.google.com/apps/testing/org.oniontalk.messenger)
+  - **🌐 Official Website & Privacy Policy**: [**https://onion-talk.github.io/oniontalk-demo/**](https://onion-talk.github.io/oniontalk-demo/)
+  - **Main Messenger APK (`org.oniontalk.messenger` `v1.6.1` Build 57)**: [**Download `OnionTalk.apk` (latest)**](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/SHA256SUMS.txt))
   - **Standalone Android Relay Node APK (`org.oniontalk.relaynode` `v1.5.2` Build 11)**: [**Download `OnionTalk-RelayNode.apk` (latest)**](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk) ([`SHA256SUMS.txt`](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/SHA256SUMS.txt))
   - **🐳 Desktop & Web Container + Embedded Tor v3 Relay (`Windows / Linux / macOS`)**: [**`eriktonon/oniontalk-web:latest`**](https://hub.docker.com/r/eriktonon/oniontalk-web) ![Docker tag](https://img.shields.io/docker/v/eriktonon/oniontalk-web?sort=semver&label=tag&style=flat-square) — Self-contained Rust Black-Box Web Messenger + active Tor v3 Hidden Service Relay listening on `127.0.0.1:8420`.
+  - **🦀 100% Rust Native Relay Container (`oniontalk-relay-rs v1.6.1`)**: [**`eriktonon/oniontalk:latest`**](https://hub.docker.com/r/eriktonon/oniontalk) — Zero-Python Tokio/Axum + Sharded `DashMap` relay node (`11.9 MiB` RAM, `-92%` footprint) with isochronous `/api/v1/voice/stream`.
 
-- **🛡️ Key Cryptographic & P2P Mesh Breakthroughs in `v1.5.4` (`Build 48` & Relay `Build 10`)**:
+| **1. OnionVoice V1 PQC Call (`v1.6.1`)** | **2. Sovereign PQC Groups & FounderPass** | **3. 100% Rust Relay Node & 35-Node Mesh** |
+| :---: | :---: | :---: |
+| <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/20-onionvoice-pqc-call-v157.png" width="260" alt="OnionVoice V1 PQC Voice Call" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/21-pqc-groups-founder-v157.png" width="260" alt="Sovereign PQC Groups and FounderPass" /> | <img src="https://raw.githubusercontent.com/onion-talk/.github/main/assets/screenshots/18-relay-node-android-v101.png" width="260" alt="OnionTalk Relay v1.5.7 Rust Engine" /> |
+| *Sub-500ms (445ms) Hi-Fi PQC voice calls over Tor v3 with 99.31% waveform fidelity (`SNR = 17.75 dB`, `0ms` gap) & Round-Robin 480ms batching.* | *Post-Quantum Groups (`ML-KEM-768`), Admin Criteria Sync (`__CTRL_GROUP_META_PQC_V1__`), `FounderPass` & sovereign local deletion.* | *`oniontalk-relay-rs v1.6.1` (`11.9 MiB` RAM, 0% Python) synchronized across 35 global `.onion` v3 nodes.* |
+
+- **🛡️ Key Cryptographic, Voice & P2P Mesh Breakthroughs in `v1.6.1` (`Build 57` & Rust Relay `v1.6.1`)**:
   1. **Sovereign Post-Quantum Encrypted Groups (`PQC Groups`) & Anti-Spam Proof-of-Community**: End-to-end encrypted multi-party group chats over Tor v3 with zero central member servers. Group creation unlocks automatically via organic local proof-of-community (`3+ mutual contacts` + `5+ days of vault maturity`, evaluated 100% locally) or immediately via an offline `Ed25519`-signed **`FounderPass`** certificate granted to community Relay Node Operators (`2+ hours active uptime`) or voluntary crypto supporters.
   2. **In-RAM Image Blur & Pixelation Studio + Zero-EXIF Sanitizer**: Built-in tactile brush editor (`Gaussian Blur` & `Mosaic Pixelate`) operating strictly in volatile RAM before encryption, combined with 100% EXIF/GPS header stripping and Least Significant Bit (`LSB`) anti-fingerprinting jitter.
   3. **Hybrid Post-Quantum Cryptography (`__ENC_PQC_KYBER768_X25519_V3__`)**: Combines classical **Dual X25519 ECDH** with **NIST FIPS 203 ML-KEM-768 (`Kyber-768`)** key encapsulation via `HKDF-SHA256` + `ChaCha20-Poly1305 AEAD` + `Ed25519` outer envelope signatures to protect against *Harvest Now, Decrypt Later* quantum adversaries.
@@ -105,11 +116,20 @@ OnionTalk eliminates central servers, phone numbers, and clearnet IP exposure:
 
 Below is a real-time demonstration captured from two independent Android emulators (**Pablo** and **Bruna**) conversing in English over the OnionTalk Tor v3 mesh—with zero SIM card, zero phone number, and full anti-forensic local storage (`SQLCipher AES-256-CBC` + `Argon2id`).
 
-👉 **[Download on Google Play (`org.oniontalk.messenger`) →](https://play.google.com/store/apps/details?id=org.oniontalk.messenger)**  
+👉 **[Download on Google Play (Open Beta — `org.oniontalk.messenger`) →](https://play.google.com/store/apps/details?id=org.oniontalk.messenger)**  
+👉 **[Join Google Play Open Beta via Web (`apps/testing`) →](https://play.google.com/apps/testing/org.oniontalk.messenger)**  
 👉 **[Download the latest signed Messenger APK →](https://github.com/onion-talk/oniontalk-demo/releases/latest/download/OnionTalk.apk)**  
 👉 **[Download the latest signed Relay Node APK →](https://github.com/onion-talk/oniontalk-relay/releases/latest/download/OnionTalk-RelayNode.apk)**  
 👉 **[Official Website & Privacy Policy (GitHub Pages) →](https://onion-talk.github.io/oniontalk-demo/)**    
+👉 **[Official Instagram (`@oniontalk.app`) →](https://www.instagram.com/oniontalk.app/)**  
 👉 **[Explore the Full Screen-by-Screen Technical Walkthrough (`oniontalk-demo`) →](https://github.com/onion-talk/oniontalk-demo)**
+
+> **💬 Ao Baixar / After Downloading:**
+> Ao baixar o OnionTalk (Android ou Desktop/Web), **entre em contato pelo próprio app com um de nossos administradores**:
+> ```text
+> @bbac48f99ed4536ce9134df16cc49dbed2d9109ed351710d181d86c28f34efd9:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
+> ```
+> 📸 **Instagram Oficial:** [https://www.instagram.com/oniontalk.app/](https://www.instagram.com/oniontalk.app/) (`@oniontalk.app`)
 
 <div align="center">
   <a href="https://github.com/onion-talk/oniontalk-demo/raw/main/video/OnionTalk-Freedom-EN.mp4">
@@ -139,17 +159,16 @@ Below is a real-time demonstration captured from two independent Android emulato
 
 ## 🌐 Global 17-Node Tor v3 Bootstrap Mesh (`v1.4.2` — 8 Countries)
 
-| # | Country | Region | Tor v3 Hidden Service (`.onion`) |
-| :---: | :---: | :--- | :--- |
-| **1–9** | 🇧🇷 **Brazil** | Multi-Process Local Cluster (`BR #1–#9`) | `7c4e1v...onion` · `qp3f6t...onion` · `3u4l3q...onion` · `5w5e6o...onion` · `bzzcck...onion` · `rtxpqj...onion` · `e7yxy6...onion` · `w3bdpb...onion` · `3vpw2g...onion` |
-| **10** | 🇺🇸 **United States** | Ashburn (`us-east`) | `http://v5ef23ec3x6dbennh2g7p5v5y72t4zaxbkb3c5v6ndfd3t33c32yd7id.onion` |
-| **11** | 🇫🇷 **France** | Paris (`eu-west`) | `http://m7k2r6w9p8x3q1z5y4v2n8b6c9d4f7g2h5j8k1l3m6n9p2q5r8s1t4id.onion` |
-| **12** | 🇩🇪 **Germany** | Frankfurt (`eu-central-1`) | `http://d4f7g2h5j8k1l3m6n9p2q5r8s1t4v7w2x5z8b1c4f7g2h5j8k1l3m6ad.onion` |
-| **13** | 🇷🇺 **Russia** | Moscow (`ru-central`) | `http://r9s2t5v8w1x4z7b3c6f9g2h5j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4id.onion` |
-| **14** | 🇸🇬 **Singapore** | Singapore (`ap-southeast`) | `http://k3l6m9n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4s7ad.onion` |
-| **15** | 🇯🇵 **Japan** | Tokyo (`ap-northeast`) | `http://j8k1l4m7n2p5q8r1s4t7v2w5x8z1b4c7f2g5h8j1k4l7m2n5p8q1r4id.onion` |
-| **16** | 🇩🇪 **Germany** | Nuremberg (`eu-central-2`) | `http://o5zqqfl5znzexdojfnxgub5jnjelxdahbyxasjp57sx6fbxtjeqovpad.onion` |
-| **17** | 🇨🇳 **China** | Hangzhou (`cn-east`) | `http://2amizuhb3p5x2lk3sra7f7thm5tgs7qtnysgowqpmexcqi4cuwyv7vad.onion` |
+| Região / País | Nós Relays Ativos | Descoberta & Topologia |
+| :--- | :---: | :--- |
+| 🇧🇷 **Brasil (América do Sul)** | `3` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇺🇸 **Estados Unidos (América do Norte)** | `8` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇫🇷 **França (Europa Ocidental)** | `3` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇷🇺 **Rússia (Eurásia)** | `2` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇩🇪 **Alemanha (Europa Central)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇸🇬 **Singapura (Sudeste Asiático)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇯🇵 **Japão (Ásia-Pacífico)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
+| 🇨🇳 **China (Ásia Oriental)** | `1` | Auto-Gossip PEX (`Endereços .onion protegidos por OpSec`) |
 
 ---
 
@@ -160,8 +179,8 @@ This organization follows a modular structure for the OnionTalk protocol, relay 
 | Repository | Role | Stack | Status |
 | :--- | :--- | :--- | :--- |
 | [**`oniontalk-demo`**](https://github.com/onion-talk/oniontalk-demo) | Official Google Play App Link & Step-by-Step Visual Walkthrough (*Pablo & Bruna* Dual-Emulator Demo) | Android, SQLCipher, Tor v3, Documentation | ![Active](https://img.shields.io/badge/Google_Play-available-00C853?style=flat-square) |
-| [**`onion-talk-web`**](https://hub.docker.com/r/eriktonon/oniontalk-web) | Self-Contained Desktop & Web Client + Embedded Tor v3 Hidden Service Relay (`eriktonon/oniontalk-web:latest`, Private Source / Public Hardened Image) | Rust, Axum, Argon2id, ChaCha20-Poly1305, X3DH, Tor v3, Docker | ![Docker](https://img.shields.io/badge/Docker_Hub-v1.5.0--build36-2496ED?style=flat-square&logo=docker&logoColor=white) |
-| [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Ed25519-Authenticated Gossip PEX, RAM-Only Volatile Queues, and Cryptographic ACK Preimage Lock | Python 3.12, Flask, Gunicorn, Cryptography, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
+| [**`onion-talk-web`**](https://hub.docker.com/r/eriktonon/oniontalk-web) | Self-Contained Desktop & Web Client + Embedded Tor v3 Hidden Service Relay (`eriktonon/oniontalk-web:latest`, Private Source / Public Hardened Image) | Rust, Axum, Argon2id, ChaCha20-Poly1305, X3DH, Tor v3, Docker | ![Docker](https://img.shields.io/badge/Docker_Hub-v1.6.1--build54-2496ED?style=flat-square&logo=docker&logoColor=white) |
+| [**`oniontalk-relay`**](https://github.com/onion-talk/oniontalk-relay) | Zero-Knowledge Tor v3 Hidden Service Relay Node with Ed25519-Authenticated Gossip PEX, RAM-Only Volatile Queues, and Cryptographic ACK Preimage Lock | Rust 1.85, Tokio, Axum, DashMap, Ed25519/SHA3, Tor v3, Docker Compose | ![Active](https://img.shields.io/badge/status-production-00C853?style=flat-square) |
 | [**`oniontalk-protocol`**](https://github.com/onion-talk/oniontalk-protocol) | OnionTalk Wire Protocol Specification, 4-Layer Cryptographic Stack, Epidemic Gossip Routing, and Anti-Censorship Manifesto | Markdown, Mermaid, Cryptographic Specs | ![Active](https://img.shields.io/badge/status-stable-1F6FEB?style=flat-square) |
 | [**`.github`**](https://github.com/onion-talk/.github) | Organization Profile, Community Health Files, Security Disclosure Policy, and Funding Configuration | GitHub Actions, YAML, Markdown | ![Active](https://img.shields.io/badge/status-active-00C853?style=flat-square) |
 
@@ -275,6 +294,16 @@ OnionTalk is an independent open-source project with zero venture capital, zero 
 | **Bitcoin (`BTC`)** | `bc1q0hr95ay33rtazfepg64yddf52q3yqh7ud83cza` |
 | **Ethereum (`ETH`)** | `0xE69FCE4Fa35CF3bd98F496337b1eA223270b2c92` |
 | **Solana (`SOL`)** | `3E8L1Hdqe7Xk6GCrzHbtY5sReAfLFc9CdwgZxP7qaoHq` |
+
+### 💬 Doação por Outros Meios & Contato do Administrador pelo App
+
+Ao baixar o app ou **em caso de doação por algum outro meio**, entre em contato diretamente pelo OnionTalk com um de nossos administradores:
+
+```text
+@bbac48f99ed4536ce9134df16cc49dbed2d9109ed351710d181d86c28f34efd9:onion4zr3bsdeaelksemwokl5qmxd5o7jyblf46vc2mfl6cozgw77tqd.onion
+```
+
+- 📸 **Instagram Oficial:** [https://www.instagram.com/oniontalk.app/](https://www.instagram.com/oniontalk.app/) (`@oniontalk.app`)
 
 ---
 
